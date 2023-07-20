@@ -2,10 +2,10 @@ import React from "react";
 import payment from "../../img/payment.png";
 const Footer = () => {
   return (
-    <section className="px-10 py-30">
+    <section className="px-10 py-5 bg-neutral-900	">
       <div className="flex gap-10">
         <div className="flex-1 flex flex-col gap-2 text-justify	 text-md">
-          <h1 className="text-xl text-gray-800">Categories</h1>
+          <h1 className="text-xl text-white">Categories</h1>
           <span className="text-gray-500">Men</span>
           <span className="text-gray-500">Women</span>
           <span className="text-gray-500">Shoes</span>
@@ -13,7 +13,7 @@ const Footer = () => {
           <span className="text-gray-500">New Arrivals</span>
         </div>
         <div className="flex-1 flex flex-col gap-2 text-justify	 text-md">
-          <h1 className="text-xl text-gray-800">Links</h1>
+          <h1 className="text-xl text-white">Links</h1>
           <span className="text-gray-500">FAQs</span>
           <span className="text-gray-500">Pages</span>
           <span className="text-gray-500">Stores</span>
@@ -21,7 +21,7 @@ const Footer = () => {
           <span className="text-gray-500">Cookies</span>
         </div>
         <div className="flex-1 flex flex-col gap-2 text-justify	 text-md">
-          <h1 className="text-xl text-gray-800">About</h1>
+          <h1 className="text-xl text-white">About</h1>
           <span className="text-gray-500">
             An ecommerce store is an online platform that enables businesses to
             sell products or services to customers over the internet. It
@@ -33,7 +33,7 @@ const Footer = () => {
           </span>
         </div>
         <div className="flex-1 flex flex-col gap-2 text-justify	 text-md">
-          <h1 className="text-xl text-gray-800">Contact</h1>
+          <h1 className="text-xl text-white">Contact</h1>
           <span className="text-gray-500">
             In an ecommerce store, the "contact" section is a crucial component
             that provides customers with a means to reach out to the business
@@ -45,14 +45,14 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <div className="flex items-center justify-between mt-5">
+      <div className="flex items-center justify-between mt-5 ">
         <div>
           <span className="font-bold text-blue-400 text-2xl">
             ECOMMERCE STORE
           </span>
         </div>
         <div>
-          <img src={payment} className="h-20" />
+          <img src={payment} className="h-12" />
         </div>
       </div>
     </section>

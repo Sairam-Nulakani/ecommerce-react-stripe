@@ -8,55 +8,64 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     //nav
-    <div className="h-80px py-5">
+    <div className="h-80px py-5 bg-neutral-900 ">
       <div className="px-10 py-30 flex justify-between text-xl">
-        <div className="flex justify-between items-center gap-4">
-          <div className="flex items-center">
-            <img src={image} className="h-8 w-15" />
+        <div className="flex justify-between items-center gap-1">
+          <div className="flex items-center hover:border-2 px-3 py-2">
+            <img src={image} />
             <IoMdArrowDropdown className="text-3xl" />
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center hover:py-2 px-3 hover:border-2">
             <p>IND</p>
             <IoMdArrowDropdown className="text-3xl" />
           </div>
-          <div>
+          <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/products/1">Men</Link>
           </div>
-          <div>
+          <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/products/2">Women</Link>
           </div>
-          <div>
+          <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/products/3">Children</Link>
           </div>
         </div>
-        <div>
-          <Link to="/" className="text-4xl font-bold">
-            ECommerce Website
-          </Link>
+        <div className="items-center text-center relative w-full ml-3 mr-3 grid place-items-center h-15 bg-gray-200 rounded-md">
+          <div className="flex bg-gray-300 border-2 items-center rounded-l-lg absolute left-0 py-1">
+            <button className="text-sm py-2 px-3 text-black">All</button>
+            <IoMdArrowDropdown className="text-md text-gray-800" />
+          </div>
+          <input
+            type="text"
+            className="border-2 h-full rounded-md py-3 mr-2 ml-2 w-full pl-16"
+            placeholder="Search..."
+          />
+          <div className="absolute right-0 h-11 w-9 rounded-r-lg bg-lime-400 items-center justify-center flex">
+            <BsSearch className="text-black" />
+          </div>
         </div>
-        <div className="flex items-center gap-4">
-          <div>
+        <div className="flex items-center gap-1">
+          <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/">
               <h1>Homepage</h1>
             </Link>
           </div>
-          <div>
+          <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/">About</Link>
           </div>
-          <div>
+          <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/">Contact</Link>
           </div>
-          <div>
+          <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/">Stores</Link>
           </div>
-          <div className="flex justify-between items-center text-gray-500 text-2xl gap-4">
+          <div className="flex justify-between items-center text-gray-500 text-2xl gap-2">
             <BsSearch className="cursor-pointer" />
             <BsFillPersonFill className="cursor-pointer" />
             <AiOutlineHeart className="cursor-pointer" />
             <div className="flex justify-between items-center relative">
               <AiOutlineShoppingCart className="cursor-pointer" />
-              <span className="text-sm  w-4 h-4 rounded-full bg-blue-700 text-white absolute flex items-center justify-center -right-2 -top-2">
-                0
+              <span className="text-sm  w-5 h-5 rounded-full bg-blue-700 text-white absolute flex items-center justify-center -right-2 -top-2">
+                12
               </span>
             </div>
           </div>
