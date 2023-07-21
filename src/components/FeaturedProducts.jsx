@@ -38,7 +38,7 @@ const FeaturedProducts = ({ type }) => {
   return (
     <div className="px-20 py-40">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl flex-auto w-64 "> {type} Products</h1>
+        <h1 className="text-3xl flex-auto w-64 "> {type} Products</h1>
         <p className="flex-auto w-32 text-gray-500">
           Featured and popular products are the best-selling items for your
           product, product range, or company. However, a featured product could

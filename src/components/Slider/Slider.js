@@ -16,7 +16,7 @@ const Slider = () => {
     setCurrentSlide(currentSlide === 2 ? 0 : (prev) => prev + 1);
   };
   return (
-    <div className="h-screen w-full relative overflow-hidden">
+    <div className="h-full w-full relative overflow-hidden">
       <div
         className="w-screen sm:w-[300vw] flex h-screen transition duration-1000	"
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
