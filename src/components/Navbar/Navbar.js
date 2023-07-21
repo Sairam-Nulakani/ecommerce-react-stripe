@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     //nav
     <div className="h-80px py-5 bg-neutral-900 ">
-      <div className="px-10 py-30 flex justify-between text-xl">
+      <div className="px-10 py-30 flex justify-between font-medium text-white">
         <div className="flex justify-between items-center gap-1">
           <div className="flex items-center hover:border-2 px-3 py-2">
             <img src={image} />
@@ -30,9 +30,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="items-center text-center relative w-full ml-3 mr-3 grid place-items-center h-15 bg-gray-200 rounded-md">
-          <div className="flex bg-gray-300 border-2 items-center rounded-l-lg absolute left-0 py-1">
+          <div className="flex bg-gray-300 border-none items-center rounded-l-lg absolute left-0 py-1">
             <button className="text-sm py-2 px-3 text-black">All</button>
-            <IoMdArrowDropdown className="text-md text-gray-800" />
+            <IoMdArrowDropdown className="text-md text-gray-800 cursor-pointer" />
           </div>
           <input
             type="text"
@@ -40,7 +40,7 @@ const Navbar = () => {
             placeholder="Search..."
           />
           <div className="absolute right-0 h-11 w-9 rounded-r-lg bg-lime-400 items-center justify-center flex">
-            <BsSearch className="text-black" />
+            <BsSearch className="text-black cursor-pointer" />
           </div>
         </div>
         <div className="flex items-center gap-1">
@@ -58,8 +58,7 @@ const Navbar = () => {
           <div className="hover:border-2 hover:py-2 px-3">
             <Link to="/">Stores</Link>
           </div>
-          <div className="flex justify-between items-center text-gray-500 text-2xl gap-2">
-            <BsSearch className="cursor-pointer" />
+          <div className="flex justify-between items-center text-gray-500 text-3xl gap-2">
             <BsFillPersonFill className="cursor-pointer" />
             <AiOutlineHeart className="cursor-pointer" />
             <div className="flex justify-between items-center relative">

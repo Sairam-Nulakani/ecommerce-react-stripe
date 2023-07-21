@@ -36,13 +36,13 @@ const Slider = () => {
       </div>
       <div className="absolute left-0 right-0 m-auto w-1 flex bottom-40">
         <div
-          className="w-24 h-15 py-3 px-3 border-2  bg-green-700	 mr-1 cursor-pointer"
+          className="w-24 h-15 py-3 px-3 border-2  mr-1 cursor-pointer transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
           onClick={prevSlide}
         >
           <AiOutlineLeft />
         </div>
         <div
-          className="w-24 h-15 py-3 px-3 border-2 cursor-pointer bg-green-700	"
+          className="w-24 h-15 py-3 px-3 border-2 cursor-pointer transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300	"
           onClick={nextSlide}
         >
           <AiOutlineRight />
