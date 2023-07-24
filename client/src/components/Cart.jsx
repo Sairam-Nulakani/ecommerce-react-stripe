@@ -41,7 +41,7 @@ const Cart = () => {
       ))}
       <div className="flex justify-between font-bold mb-6">
         <span className="text-xl">SUB TOTAL</span>
-        <span>1250</span>
+        <span>{599 + 299}</span>
       </div>
       <button className="bg-blue-500 w-60 flex items-center px-1 py-2 justify-center text-xl rounded-md text-white mb-5">
         Proceed to CheckOut
