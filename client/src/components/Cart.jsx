@@ -2,6 +2,8 @@ import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { removeItem, resetProduct } from "../store/cartReducer";
+import { loadStripe } from "@stripe/stripe-js";
+import { makeRequest } from "../makeRequest";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.products);
@@ -10,6 +12,22 @@ const Cart = () => {
     let total = 0;
     products.forEach((item) => (total += item.quantity * item.price));
     return total.toFixed(2);
+  };
+  const stripePromise = loadStripe(
+    "pk_test_51NXhERSE4LYoDb8AEleh5xzax6pTOtcaHoXC9E6BHcLut5KbXyPngEffWKUN64t4hd590ms0td2vRlHT9dOixHAI00bwbePNPH"
+  );
+  const handlePayment = async () => {
+    try {
+      const stripe = await stripePromise;
+      const res = await makeRequest.post("/orders", {
+        products,
+      });
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="absolute z-10 top-20 right-2 bg-white shadow-lg p-9 rounded-md">
@@ -40,7 +58,10 @@ const Cart = () => {
         <span className="text-xl">SUB TOTAL</span>
         <span>{totalPrice()}</span>
       </div>
-      <button className="bg-blue-500 w-60 flex items-center px-1 py-2 justify-center text-xl rounded-md text-white mb-5">
+      <button
+        className="bg-blue-500 w-60 flex items-center px-1 py-2 justify-center text-xl rounded-md text-white mb-5"
+        onClick={handlePayment}
+      >
         Proceed to CheckOut
       </button>
       <span
