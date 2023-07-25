@@ -5,9 +5,12 @@ import { BsSearch, BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const products = useSelector((state) => state.cart.products);
+
   return (
     //nav
     <div className="h-80px py-5 bg-neutral-900 ">
@@ -69,7 +72,7 @@ const Navbar = () => {
             >
               <AiOutlineShoppingCart className="cursor-pointer" />
               <span className="text-sm  w-5 h-5 rounded-full bg-blue-700 text-white absolute flex items-center justify-center -right-2 -top-2">
-                12
+                {products.length}
               </span>
             </div>
           </div>

@@ -3,12 +3,15 @@ import { AiOutlineShoppingCart, AiOutlineHeart } from "react-icons/ai";
 import { MdCompare } from "react-icons/md";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/cartReducer";
 
 const Product = () => {
   const id = useParams().id;
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
   const [selectedImg, setSelectedImg] = useState("img");
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
   return (
     <div className="px-5 py-5 flex gap-3">
       {loading ? (
@@ -71,7 +74,21 @@ const Product = () => {
                 +
               </button>
             </div>
-            <button className="bg-blue-500 w-48 flex items-center px-2 py-4 justify-center gap-3 text-xl rounded-md text-white">
+            <button
+              className="bg-blue-500 w-48 flex items-center px-2 py-4 justify-center gap-3 text-xl rounded-md text-white"
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    id: data.id,
+                    title: data.attributes.title,
+                    desc: data.attributes.desc,
+                    price: data.attributes.price,
+                    img: data.attributes.img.data.attributes.url,
+                    quantity,
+                  })
+                )
+              }
+            >
               <AiOutlineShoppingCart />
               Add to Cart
             </button>
